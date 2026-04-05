@@ -1,0 +1,139 @@
+{
+  "_comment": "Kopiere diese Datei als agent-meta.config.json ins Projekt-Root und befülle alle Werte.",
+
+  "agent-meta-version": "0.13.0",
+
+  "_comment_provider": "AI provider: 'Claude' enables automatic CLAUDE.md generation and managed block updates. Other values (e.g. 'GitHub') disable CLAUDE.md handling.",
+  "ai-provider": "Claude",
+
+  "platforms": ["sharkord"],
+
+  "_comment_roles": "Optional: Whitelist der zu generierenden Rollen. Fehlt dieser Key → alle Rollen werden generiert.",
+  "roles": [
+    "orchestrator",
+    "developer",
+    "tester",
+    "validator",
+    "requirements",
+    "ideation",
+    "documenter",
+    "release",
+    "docker",
+    "meta-feedback",
+    "git"
+  ],
+
+  "project": {
+    "name":   "mein-projekt",
+    "prefix": "mp",
+    "short":  "mein-projekt"
+  },
+
+  "variables": {
+
+    "_section_generic": "================================================================",
+    "_section_generic_desc": "GENERISCHE VARIABLEN — für jedes Projekt relevant",
+    "_section_generic_end": "================================================================",
+
+    "PROJECT_NAME":        "mein-projekt",
+    "PROJECT_DESCRIPTION": "Kurzbeschreibung was das Projekt macht.",
+    "PROJECT_GOAL":        "Das primäre Ziel des Projekts — was soll es für wen lösen?",
+    "PLATFORM":            "Sharkord Plugin SDK",
+    "RUNTIME":             "Bun (NICHT Node.js)",
+    "LANGUAGE":            "TypeScript (ES6+, strict)",
+    "PROJECT_LANGUAGES":   "TypeScript",
+
+    "_comment_lang": "Sprache in der der Agent antwortet — End-User Output (z.B. Englisch, Deutsch)",
+    "COMMUNICATION_LANGUAGE":   "Englisch",
+    "_comment_user_input_lang": "Sprache in der der Nutzer Anweisungen gibt — Agent-Input (z.B. Deutsch, English)",
+    "USER_INPUT_LANGUAGE":      "Deutsch",
+    "_comment_docs_lang": "Sprache für öffentliche/externe Doku: README, CHANGELOG, Release Notes, GitHub Issues",
+    "DOCS_LANGUAGE":            "Englisch",
+    "_comment_internal_lang": "Sprache für interne Doku: CODEBASE_OVERVIEW, ARCHITECTURE, REQUIREMENTS, conclusions",
+    "INTERNAL_DOCS_LANGUAGE":   "Deutsch",
+    "_comment_code_lang": "Sprache für code-nahe Artefakte: Code-Kommentare, Commit-Messages, Test-Beschreibungen",
+    "CODE_LANGUAGE":            "Englisch",
+
+    "_comment_meta_repo": "GitHub-Repo für Meta-Feedback Issues (owner/repo)",
+    "AGENT_META_REPO":     "Popoboxxo/agent-meta",
+
+    "_comment_git": "Git-Plattform und Repository-Konfiguration",
+    "GIT_PLATFORM":    "GitHub",
+    "GIT_REMOTE_URL":  "https://github.com/owner/repo",
+    "GIT_MAIN_BRANCH": "main",
+
+    "_comment_deps": "Kern-Abhängigkeiten mit konkreter Version — eine pro Zeile als Markdown-Liste",
+    "SYSTEM_DEPENDENCIES": "- @sharkord/plugin-sdk: `0.0.16`\n- bun: `>=1.0.0`",
+
+    "_comment_urls": "Relevante System-URLs — eine pro Zeile als Markdown-Liste",
+    "SYSTEM_URLS":         "- Web-UI: `http://localhost:3000`",
+
+    "BUILD_COMMAND":       "bun run build",
+    "TEST_COMMAND":        "bun test",
+    "DEV_COMMANDS":        "bun run build\nbun test",
+    "DEV_STACK_START":     "docker compose -f docker-compose.dev.yml up -d",
+    "DEV_STACK_RELOAD":    "docker compose -f docker-compose.dev.yml restart",
+
+    "PROJECT_CONTEXT":     "Projektbeschreibung für Agenten — Tech-Stack, Ziel, Besonderheiten.",
+    "PROJECT_STRUCTURE":   "src/\n  index.ts       # Entry-Point\n  commands/      # Plugin-Kommandos\n  utils/         # Hilfsfunktionen",
+    "ENTRY_POINT_PATTERN": "src/index.ts — Entry-Point",
+    "KEY_PATTERNS":        "- Wichtige Muster des Projekts",
+    "ARCHITECTURE":        "src/\n  index.ts  # Entry-Point",
+    "CODE_CONVENTIONS":    "- TypeScript ES6+, kein `require`, kein `var`, kein `any`\n- Named Exports (kein default export)\n- kebab-case: `module-name.ts`, Tests: `<module>.test.ts`",
+    "EXTRA_DONTS":         "",
+    "CODE_QUALITY_RULES":  "- Keine ungenutzten Imports\n- Keine impliziten `any`\n- Alle Funktionen typisiert",
+    "_comment_snippets": "Pfad zu sprachspezifischen Snippet-Dateien — relativ zu .agent-meta/snippets/ (z.B. 'tester/bun-typescript.md'). NICHT .claude/snippets/ verwenden!",
+    "TESTER_SNIPPETS_PATH":    "tester/bun-typescript.md",
+    "DEVELOPER_SNIPPETS_PATH": "developer/bun-typescript.md",
+
+    "TEST_COMMANDS":       "bun test\nbun test --coverage",
+    "BUILD_COMMANDS":      "bun run build",
+    "REQ_CATEGORIES":      "- Kernfunktionalität\n- Lifecycle\n- Nichtfunktionale Anforderungen",
+    "REQ_CATEGORIES_LIST": "- **Kernfunktionalität** — Was das Projekt tut\n- **Lifecycle** — Startup, Shutdown, Fehlerbehandlung\n- **Nichtfunktionale Anforderungen** — Performance, Sicherheit",
+
+    "_section_infra": "================================================================",
+    "_section_infra_desc": "INFRASTRUKTUR-VARIABLEN — Docker, Ports, Container (generisch)",
+    "_section_infra_end": "================================================================",
+
+    "SERVICE_NAME":        "app",
+    "CONTAINER_NAME":      "mein-projekt-dev",
+
+    "_comment_primary_port": "Haupt-Port der Anwendung (Web-UI, HTTP-API etc.)",
+    "PRIMARY_PORT":        "3000",
+
+    "_comment_extra_ports": "Weitere benötigte Ports — eine pro Zeile als Markdown-Liste. Leer lassen wenn nicht benötigt.",
+    "EXTRA_PORTS":         "",
+
+    "DOCKER_STACKS_OVERVIEW": "| Dev-Stack | docker-compose.dev.yml | Lokales Testen |",
+    "EXTRA_VOLUMES":           "",
+    "EXTRA_VOLUME_DEFINITIONS": "",
+    "EXTRA_ENV_VARS":          "",
+    "EXTRA_STARTUP_INFO":      "",
+    "HOST_LAN_IP":             "192.168.1.100",
+
+    "_section_platform": "================================================================",
+    "_section_platform_desc": "PLATTFORM-VARIABLEN — nur bei platforms: [\"sharkord\"] relevant",
+    "_section_platform_end": "================================================================",
+
+    "_comment_image_tag": "Docker-Image-Tag des Sharkord-Kernsystems — muss mit peerDependencies in package.json übereinstimmen",
+    "PRIMARY_IMAGE_TAG":   "v0.0.16",
+
+    "_comment_plugin_dir": "Verzeichnisname des Plugins = 'name'-Feld in package.json (Sharkord erkennt Plugin anhand dieses Namens)",
+    "PLUGIN_DIR_NAME":     "mein-projekt",
+
+    "_section_project": "================================================================",
+    "_section_project_desc": "PROJEKTSPEZIFISCHE VARIABLEN — individuelle Werte pro Projekt",
+    "_section_project_end": "================================================================",
+
+    "BUILD_OUTPUT":        "- index.js  (minified ESM Bundle)\n- package.json",
+    "ARTIFACT_ZIP_CMD":    "powershell -Command \"Compress-Archive -Path 'dist/mein-projekt' -DestinationPath 'dist/mein-projekt.zip' -Force\"",
+    "ARTIFACT_TAR_CMD":    "cd dist && tar -czf mein-projekt.tar.gz mein-projekt/ && cd ..",
+    "GH_ASSETS":           "dist/mein-projekt.zip dist/mein-projekt.tar.gz",
+    "REQUIRED_BINARIES_SECTION": "Keine externen Binaries erforderlich.",
+    "BINARY_INSTALL_STEPS":      "",
+    "REQUIRED_BINARY_NAMES":     "(keine)",
+    "BUILD_SYSTEM_NOTES":        "bun run build erzeugt dist/mein-projekt/",
+    "VERSION_DIST_BEHAVIOUR":    "build.ts kopiert package.json 1:1 ins Dist."
+
+  }
+}
