@@ -1,0 +1,102 @@
+agent-meta-version: 0.34.1
+
+ai-providers:
+  - Claude
+  - Continue
+  - Gemini
+  - Opencode
+
+project:
+  name: homeassistant-config
+  prefix: ha
+  short: ha-config
+
+platforms:
+  - homeassistant
+
+roles:
+  - orchestrator
+  - developer
+  - tester
+  - validator
+  - requirements
+  - ideation
+  - documenter
+  - release
+  - meta-feedback
+  - git
+  - feature
+  - agent-meta-manager
+  - agent-meta-scout
+  - docker
+  - openscad-developer
+
+speech-mode: submissive
+
+dod-preset: full
+
+variables:
+  PROJECT_NAME: homeassistant-config
+  PROJECT_DESCRIPTION: High-End Home Assistant Konfigurationsmanagement für Power-User
+  PLATFORM: Home Assistant OS / Core 2026.x
+  RUNTIME: Home Assistant (Python-basiert)
+  LANGUAGE: YAML, Jinja2, CSS (card-mod)
+  PROJECT_LANGUAGES: YAML, Jinja2, CSS, Python (Custom Components)
+  COMMUNICATION_LANGUAGE: Deutsch
+  USER_INPUT_LANGUAGE: Deutsch
+  DOCS_LANGUAGE: Deutsch
+  INTERNAL_DOCS_LANGUAGE: Deutsch
+  CODE_LANGUAGE: Englisch
+  AGENT_META_REPO: Popoboxxo/agent-meta
+  GIT_PLATFORM: GitHub
+  GIT_REMOTE_URL: https://github.com/owner/repo
+  GIT_MAIN_BRANCH: main
+  SYSTEM_DEPENDENCIES: "- Home Assistant Core: `2026.x`\n- YAML Parser\n- Zigbee2MQTT (Addon)\n- Frigate (Addon)"
+  SYSTEM_URLS: "- Home Assistant Web-UI: `http://homeassistant.local:8123`"
+  BUILD_COMMAND: ha core check-config
+  TEST_COMMAND: ha core check-config && ha core validate --config config/
+  PROJECT_CONTEXT: Home Assistant Power-User Setup auf Proxmox/Unraid
+  PROJECT_STRUCTURE: "config/\n  packages/\n  automations/\n  scripts/"
+  ENTRY_POINT_PATTERN: config/configuration.yaml
+  KEY_PATTERNS: Modular, YAML-Anker, Template-Sensoren
+  ARCHITECTURE: "packages/\n  abstraction/\n  home/\n  solar/\n  car/\n  grid/\n  heating/"
+  CODE_CONVENTIONS: "YAML: 2-Space Indent\nIDs: kebab-case"
+  EXTRA_DONTS: Keine versionierten IDs
+  CODE_QUALITY_RULES: YAML validiert, Template-Sensoren mit Fehlerbehandlung
+  TEST_COMMANDS: ha core check-config
+  BUILD_COMMANDS: ha core check-config
+  REQ_CATEGORIES: Automationen & Logik, Energy Management, Frontends & Dashboards
+  REQ_CATEGORIES_LIST: "- **Automationen & Logik**\n- **Energy Management**"
+  SERVICE_NAME: homeassistant
+  CONTAINER_NAME: homeassistant-config
+  PRIMARY_PORT: "8123"
+  EXTRA_PORTS: "- 1883 (MQTT)\n- 5000 (Frigate)"
+  DOCKER_STACKS_OVERVIEW: "| Dev-Stack | docker-compose.dev.yml |"
+  HOST_LAN_IP: 192.168.1.100
+  PRIMARY_IMAGE_TAG: "2026.1"
+  PLUGIN_DIR_NAME: homeassistant-config
+  BUILD_OUTPUT: config/
+  ARTIFACT_ZIP_CMD: powershell Compress-Archive
+  ARTIFACT_TAR_CMD: tar -czf
+  GH_ASSETS: homeassistant-config.backup.zip
+  REQUIRED_BINARIES_SECTION: Keine externen Binaries
+  BINARY_INSTALL_STEPS: (nicht erforderlich)
+  REQUIRED_BINARY_NAMES: (keine)
+  BUILD_SYSTEM_NOTES: config/ wird automatisch geladen
+  VERSION_DIST_BEHAVIOUR: HA liest config/packages/*.yaml automatisch
+
+provider-options:
+  Continue:
+    generate-prompts: true
+    prompt-mode: full
+
+memory-overrides:
+  documenter: project
+  requirements: project
+  agent-meta-scout: local
+
+hooks:
+  dod-push-check:
+    enabled: true
+  lifecycle-check:
+    enabled: false

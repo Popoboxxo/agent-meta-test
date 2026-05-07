@@ -2,3 +2,12 @@
 .claude/settings.local.json
 CLAUDE.personal.md
 sync.log
+
+# --- agent-meta managed (do not edit) ---
+.claude/agent-memory-local/
+.claude/pending-tasks.md
+.claude/settings.local.json
+AGENTS.personal.md
+CLAUDE.personal.md
+sync.log
+# --- end agent-meta managed ---
