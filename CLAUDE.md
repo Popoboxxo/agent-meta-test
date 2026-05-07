@@ -108,7 +108,7 @@ Kategorien für `docs/REQUIREMENTS.md`:
 <!-- This block is automatically updated by sync.py on every sync. -->
 <!-- Manual changes here will be overwritten. -->
 
-Generiert von agent-meta v0.34.1 — `2026-05-07`
+Generiert von agent-meta v0.34.2 — `2026-05-07`
 DoD-Preset: **full** | REQ-Traceability: true | Tests: true | Codebase-Overview: true | Security-Audit: false
 
 > **Einstiegspunkt:** Starte mit dem `orchestrator`-Agenten für alle Entwicklungsaufgaben.
