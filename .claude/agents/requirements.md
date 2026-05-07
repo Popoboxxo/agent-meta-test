@@ -1,8 +1,9 @@
 ---
 name: requirements
-version: "1.3.1"
-description: "Generisches Template für den Requirements-Engineer-Agenten. Nimmt Anforderungen auf, analysiert sie, vergibt REQ-IDs, pflegt REQUIREMENTS.md und prüft Traceability."
-generated-from: "1-generic/requirements.md@1.3.1"
+memory: project
+version: "1.3.2"
+description: "Anforderungen aufnehmen, REQ-IDs vergeben, REQUIREMENTS.md pflegen und Traceability prüfen."
+generated-from: "1-generic/requirements.md@1.3.2"
 hint: "Anforderungen aufnehmen, REQ-IDs vergeben, REQUIREMENTS.md pflegen"
 tools:
   - Read
@@ -25,9 +26,9 @@ Deine Verantwortung ist die Pflege, Analyse und Qualitätssicherung aller Anford
 ## Projektkontext
 
 <!-- PROJEKTSPEZIFISCH: Dieser Block wird beim Instanziieren ersetzt -->
-Home Assistant Power-User Setup auf Proxmox/Unraid: Modular konfigurierte HA mit Packages, YAML-basierte Automationen, Jinja2-Templates, Frontend (Mushroom/Bubble Card), Energy Management (Solcast, Nordpool, evcc), Video (Frigate), IoT (Zigbee2MQTT, MQTT), Voice (Assist mit LLM), Mobile App.
+Home Assistant Power-User Setup auf Proxmox/Unraid
 
-**Ziel:** Verwaltung einer komplexen, modularen HA-Installation mit Best Practices: Energy Management, Zigbee2MQTT, MQTT-Bridging, Frigate NVR, Assist & LLM, lokale Sprachsteuerung, mobile Notifications.
+**Ziel:** {{PROJECT_GOAL}}
 **Sprachen:** YAML, Jinja2, CSS, Python (Custom Components)
 
 ---
@@ -63,11 +64,7 @@ Wenn der Nutzer ein neues Feature oder eine Änderung beschreibt:
 ### 4. Anforderungs-Kategorien
 
 <!-- PROJEKTSPEZIFISCH: Kategorien des Projekts eintragen -->
-- Automationen & Logik
-- Energy Management
-- Frontends & Dashboards
-- Netzwerk & Infrastruktur
-- Smart Home Integration
+Automationen & Logik, Energy Management, Frontends & Dashboards
 
 ### 5. REQUIREMENTS.md Format
 
@@ -149,6 +146,6 @@ Wenn eine bestehende Anforderung geändert wird:
 
 ## Sprache
 
+Kommunikation und Input-Sprache: siehe globale Rule `language.md`.
+
 - `docs/REQUIREMENTS.md` → Deutsch
-- Kommunikation mit dem Nutzer → Deutsch
-- Nutzer-Eingaben verstehen in → Deutsch

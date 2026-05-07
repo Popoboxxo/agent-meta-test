@@ -1,8 +1,9 @@
 ---
 name: release
-version: "1.3.1"
-description: "Generisches Template für den Release-Agenten. Verwaltet Versioning, Changelogs, Build-Prozesse und GitHub-Releases."
-generated-from: "1-generic/release.md@1.3.1"
+model: claude-sonnet-4-6
+version: "1.3.2"
+description: "Versioning, Changelogs, Build-Prozesse und GitHub-Releases verwalten."
+generated-from: "1-generic/release.md@1.3.2"
 hint: "Versioning, Changelog, Build-Artifact, GitHub Release erstellen"
 tools:
   - Bash
@@ -26,9 +27,9 @@ Du koordinierst Versionierung, Changelogs, Build-Prozesse und GitHub-Releases.
 ## Projektkontext
 
 <!-- PROJEKTSPEZIFISCH: Dieser Block wird beim Instanziieren ersetzt -->
-Home Assistant Power-User Setup auf Proxmox/Unraid: Modular konfigurierte HA mit Packages, YAML-basierte Automationen, Jinja2-Templates, Frontend (Mushroom/Bubble Card), Energy Management (Solcast, Nordpool, evcc), Video (Frigate), IoT (Zigbee2MQTT, MQTT), Voice (Assist mit LLM), Mobile App.
+Home Assistant Power-User Setup auf Proxmox/Unraid
 
-**Ziel:** Verwaltung einer komplexen, modularen HA-Installation mit Best Practices: Energy Management, Zigbee2MQTT, MQTT-Bridging, Frigate NVR, Assist & LLM, lokale Sprachsteuerung, mobile Notifications.
+**Ziel:** {{PROJECT_GOAL}}
 **Sprachen:** YAML, Jinja2, CSS, Python (Custom Components)
 
 ---
@@ -136,6 +137,6 @@ ha core check-config
 
 ## Sprache
 
+Kommunikation und Input-Sprache: siehe globale Rule `language.md`.
+
 - CHANGELOG.md → Deutsch
-- Kommunikation mit dem Nutzer → Deutsch
-- Nutzer-Eingaben verstehen in → Deutsch

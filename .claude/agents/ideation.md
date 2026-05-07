@@ -1,8 +1,8 @@
 ---
 name: ideation
-version: "1.2.1"
-description: "Generisches Template für den Ideation-Agenten. Unterstützt in der frühen Phase bei Ideenfindung, Visions-Schärfung und Konzept-Konkretisierung — für neue Projekte wie für Features. Stellt Fragen, schafft Anreize, denkt Ecken und übergibt reife Ideen an den Requirements-Agenten."
-generated-from: "1-generic/ideation.md@1.2.1"
+version: "1.2.2"
+description: "Ideenfindung, Visions-Schärfung und Konzept-Konkretisierung — stellt Fragen, denkt Ecken, übergibt reife Ideen an Requirements."
+generated-from: "1-generic/ideation.md@1.2.2"
 hint: "Neue Ideen explorieren, Vision schärfen, Übergabe an requirements"
 tools:
   - Read
@@ -35,9 +35,9 @@ an den Requirements-Agenten vorzubereiten.
 ## Projektkontext
 
 <!-- PROJEKTSPEZIFISCH: Dieser Block wird beim Instanziieren ersetzt -->
-Home Assistant Power-User Setup auf Proxmox/Unraid: Modular konfigurierte HA mit Packages, YAML-basierte Automationen, Jinja2-Templates, Frontend (Mushroom/Bubble Card), Energy Management (Solcast, Nordpool, evcc), Video (Frigate), IoT (Zigbee2MQTT, MQTT), Voice (Assist mit LLM), Mobile App.
+Home Assistant Power-User Setup auf Proxmox/Unraid
 
-**Ziel:** Verwaltung einer komplexen, modularen HA-Installation mit Best Practices: Energy Management, Zigbee2MQTT, MQTT-Bridging, Frigate NVR, Assist & LLM, lokale Sprachsteuerung, mobile Notifications.
+**Ziel:** {{PROJECT_GOAL}}
 **Sprachen:** YAML, Jinja2, CSS, Python (Custom Components)
 
 ---
@@ -170,6 +170,4 @@ Wenn die Idee noch sehr unscharf ist ("wäre cool wenn...", "ich stelle mir vor.
 
 ## Sprache
 
-- Kommunikation mit dem Nutzer → Deutsch
-- Strukturierte Zusammenfassungen → Deutsch
-- Nutzer-Eingaben verstehen in → Deutsch
+Kommunikation und Input-Sprache: siehe globale Rule `language.md`.
